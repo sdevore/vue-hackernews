@@ -20,6 +20,5 @@ describe('Item.vue', () => {
     const a = wrapper.find('a')
     expect(a.text()).toBe(item.title)
     expect(a.attributes().href).toBe(item.url)
-
   })
 })
