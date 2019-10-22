@@ -44,4 +44,25 @@ describe('Item.vue', () => {
     expect(a.text()).toBe(item.title)
     expect(a.attributes().href).toBe(item.url)
   })
+
+  test('renders item.score', () => {
+    const item = {
+      score: 10
+    }
+    const wrapper = shallowMount(Item, {
+      propsData: { item }
+    })
+    expect(wrapper.text()).toContain(item.score)
+
+  })
+  test('renders item.by', () => {
+    const item = {
+      by: "the author"
+    }
+    const wrapper = shallowMount(Item, {
+      propsData: { item }
+    })
+    expect(wrapper.text()).toContain(item.by)
+
+  })
 })
