@@ -31,6 +31,7 @@ export default {
           this.displayItems = items
           this.$bar.finish()
         })
+      .catch(() => this.$bar.fail())
     }
   }
 }

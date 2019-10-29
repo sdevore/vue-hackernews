@@ -58,5 +58,16 @@ describe('ProgressBar.vue', () => {
     wrapper.vm.finish()
     expect(window.clearInterval).toHaveBeenCalledWith(123)
   })
-
+  test('sets the bar to 100% width when fail is called', () => {
+    const wrapper = shallowMount(ProgressBar)
+    wrapper.vm.start()
+    wrapper.vm.fail()
+    expect(wrapper.element.style.width).toBe('100%')
+  })
+  test('adds error class to bar when fail is called', () => {
+    const wrapper = shallowMount(ProgressBar)
+    wrapper.vm.start()
+    wrapper.vm.fail()
+    expect(wrapper.classes()).toContain('error')
+  })
 })
